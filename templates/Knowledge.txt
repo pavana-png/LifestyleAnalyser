@@ -1,0 +1,20 @@
+## Flask App Setup and Machine Learning Model Deployment
+
+### Flask App Setup
+- The code sets up a Flask web application.
+- It loads a pre-trained machine learning model (a RandomForestRegressor) using joblib.
+- Routes:
+  - / (root) and /index.html to render HTML templates.
+  - /predict to handle POST requests for making predictions using the loaded model.
+
+### Machine Learning Model Training
+- Loads lifestyle data from a CSV file (lifestyle_data.csv) into a Pandas DataFrame.
+- Prepares the data by selecting features (age, calories, sleep, income, working_hours) and the target variable (healthy_life_percent).
+- Splits the data into training and testing sets.
+- Trains three regression models: Linear Regression, Decision Tree, and RandomForestRegressor.
+- Evaluates each model using Mean Squared Error (MSE) on the test set.
+- Selects RandomForestRegressor as the final model due to its performance.
+
+### Model Deployment
+- Trains a RandomForestRegressor model on the entire dataset.
+- Saves the trained model as a pickle file (lifestyle_model.pkl) using joblib.
